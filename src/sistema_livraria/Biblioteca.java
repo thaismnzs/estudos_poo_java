@@ -10,11 +10,11 @@ public class Biblioteca {
     }
 
     public void removerLivro(String titulo) {
-        for (int i = livros.size() - 1; i >= 0; i--) { // Percorrer de trás para frente evita problemas
+        for (int i = livros.size() - 1; i >= 0; i--) { 
             if (livros.get(i).getTitulo().equalsIgnoreCase(titulo)) {
                 livros.remove(i);
                 System.out.println("Removido: " + titulo);
-                return; // Para sair do loop após remover o primeiro livro encontrado
+                return; 
             }
         }
         System.out.println("Livro não encontrado.");
@@ -23,7 +23,7 @@ public class Biblioteca {
     public void consultarLivro(String titulo) {
         for (Livro livro : livros) {
             if (livro.getTitulo().equalsIgnoreCase(titulo)) {
-                System.out.println("Informações: " + livro.toString()); // Exibir apenas o livro encontrado
+                System.out.println("Informações: " + livro.toString()); 
                 return;
             }
         }
@@ -32,7 +32,7 @@ public class Biblioteca {
 
     public void emprestarLivro(String titulo) {
         for (Livro livro : livros) {
-            if (livro.getTitulo().equalsIgnoreCase(titulo)) { // Corrigido erro de `livros.getTitulo()`
+            if (livro.getTitulo().equalsIgnoreCase(titulo)) { 
                 if (livro.isDisponivel()) {
                     livro.setDisponivel(false);
                     System.out.println("Livro: " + titulo + " emprestado.");
